@@ -1,13 +1,13 @@
-package com.macintoshfan.window;
+package com.macintoshfan.swing;
 
 import javax.swing.*;
 
 /**
- * A simple program to show a window with text in Java.
+ * A simple program to show a window with text in Java using {@link javax.swing}.
  *
  * @author Macintosh_Fan
  */
-public class WindowTemplate {
+public class SwingTemplate {
     /**
      * The main method.
      *
@@ -18,7 +18,7 @@ public class WindowTemplate {
         int width = 400;
         int height = 400;
 
-        JFrame frame = new JFrame("Simple JFrame example");
+        JFrame frame = new JFrame("Simple Swing Window Example");
         JPanel panel = new JPanel();
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
