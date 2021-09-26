@@ -1,8 +1,9 @@
 package com.macintoshfan.abstraction;
 
 import com.macintoshfan.abstraction.abstractclasses.Animal;
-import com.macintoshfan.abstraction.interfaces.Rectangle;
-import com.macintoshfan.abstraction.interfaces.Shape;
+import com.macintoshfan.abstraction.abstractclasses.Cat;
+
+import java.awt.Color;
 
 /**
  * A simple program to demonstrate the usage of basic abstraction in Java.
@@ -15,8 +16,6 @@ public class AbstractionExample {
      * @param args does nothing
      */
     public static void main(String[] args) {
-        // Note that the program does not use all the classes and functionalities of each class/abstract class/interface
-
         Animal myDog = new Animal("John") {
             @Override
             public void animalSound() {
@@ -29,8 +28,11 @@ public class AbstractionExample {
 
         System.out.println();
 
-        Shape myRect = new Rectangle(4, 3);
-        System.out.println("The area of the rectangle is " + (int) myRect.area() + "cm^2");
-        myRect.draw();
+        Animal myCat = new Cat("Toffee", new Color(106, 67, 46));
+        if (myCat instanceof Cat /* Always true in this instance */) {
+            System.out.println(((Cat) myCat).furColor);
+            ((Cat) myCat).goCrazy();
+        }
+        myCat.animalSound();
     }
 }
