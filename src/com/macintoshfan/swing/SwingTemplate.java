@@ -1,6 +1,7 @@
 package com.macintoshfan.swing;
 
 import javax.swing.*;
+import java.awt.Dimension;
 
 /**
  * A simple program to show a window with text in Java using {@link javax.swing}.
