@@ -17,23 +17,31 @@ public class SwingTemplate {
         // Variables optional but helpful
         int width = 400;
         int height = 400;
+        boolean windowSize = false;
 
-        JFrame frame = new JFrame("Simple Swing Window Example");
-        JPanel panel = new JPanel();
+        JFrame frame = new JFrame("Simple Swing Window Example"); // The window
+        JPanel panel = new JPanel();                                   // The content pane in the window
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(width, height);
-        frame.add(panel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Make sure the program exits when we click [the window] 'x' at the top-left/top-right
+        if (windowSize) {
+            // Set window size including borders
+            frame.setSize(width, height);
+        } else {
+            // Set content area size in the window
+            frame.setPreferredSize(new Dimension(width, height));
+            frame.pack();
+        }
+        frame.add(panel); // Add our panel
 
-        panel.setSize(width, height);
-        panel.setLayout(null);
+        panel.setSize(frame.getContentPane().getSize() /* Get the size of the window content pane */);
+        panel.setLayout(null); // No layout; absolute positioning
 
         // Code starts here
         JLabel label = new JLabel("Hello world!");
         label.setBounds(0, 0, width, 20);
-        panel.add(label);
+        panel.add(label); // Add our new label to the panel
         // Code ends here
 
-        frame.setVisible(true);
+        frame.setVisible(true); // Show our panel
     }
 }
